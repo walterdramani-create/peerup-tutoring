@@ -1,0 +1,205 @@
+/* House style — main #1E3A8A ground #F5F7FA ink #14202E accent #F2B33D
+   headings: Lora, serif   body: Nunito Sans, sans-serif */
+ 
+/* 1 · house style — Member 1 */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #F5F7FA;
+  color: #14202E;
+  font-family: "Nunito Sans", system-ui, sans-serif;
+  line-height: 1.6;
+}
+h1, h2, h3 {
+  font-family: "Lora", Georgia, serif;
+  line-height: 1.25;
+}
+a {
+  color: #1E3A8A;
+}
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 3px solid #F2B33D;
+  outline-offset: 2px;
+}
+header {
+  background: #1E3A8A;
+  color: #F5F7FA;
+}
+.site-name {
+  margin: 0;
+  font-family: "Lora", Georgia, serif;
+  font-size: 1.9rem;
+}
+.tagline {
+  margin: 0.25rem 0 0;
+}
+nav {
+  background: #14202E;
+}
+nav a {
+  color: #F5F7FA;
+  text-decoration: none;
+  display: block;
+  padding: 0.25rem 0;
+  border-bottom: 3px solid transparent;
+}
+nav a:hover,
+nav a[aria-current="page"] {
+  border-bottom-color: #F2B33D;
+}
+header, main, aside, footer {
+  padding: 1rem;
+}
+aside {
+  border-left: 4px solid #1E3A8A;
+}
+footer {
+  background: #14202E;
+  color: #F5F7FA;
+  border-top: 3px solid #F2B33D;
+}
+footer a {
+  color: #F5F7FA;
+}
+footer p {
+  margin: 0.25rem 0;
+}
+ 
+/* 2 · layout — Member 1 */
+body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 18rem;
+  grid-template-areas:
+    "header header"
+    "nav nav"
+    "main aside"
+    "footer footer";
+}
+header { grid-area: header; }
+nav { grid-area: nav; }
+main { grid-area: main; }
+aside { grid-area: aside; }
+footer { grid-area: footer; }
+ 
+nav {
+  position: sticky;
+  top: 0;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 1rem;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+.cards li {
+  flex: 1 1 14rem;
+  padding: 1rem;
+  background: #F5F7FA;
+  border: 1px solid #1E3A8A;
+  border-top: 4px solid #F2B33D;
+}
+.cards h2, .cards h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+img, input, select, textarea, button {
+  max-width: 100%;
+}
+ 
+/* 3 · index, about, subjects, tutors pages — Member 1 */
+main > h1 {
+  margin-top: 0;
+  color: #1E3A8A;
+}
+main ul:not(.cards) {
+  padding-left: 1.25rem;
+}
+ 
+/* 4 · schedule, pricing, contact pages — Member 2 */
+.table-scroll {
+  overflow-x: auto;
+}
+table {
+  border-collapse: collapse;
+}
+caption {
+  text-align: left;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+}
+th, td {
+  padding: 0.4rem 0.75rem;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid #1E3A8A;
+}
+thead th {
+  background: #1E3A8A;
+  color: #F5F7FA;
+}
+label {
+  display: block;
+  margin-top: 0.75rem;
+  font-weight: 700;
+}
+input, select, textarea, button {
+  font: inherit;
+  padding: 0.4rem 0.6rem;
+  color: #14202E;
+  background: #F5F7FA;
+  border: 2px solid #1E3A8A;
+}
+textarea {
+  display: block;
+  width: 100%;
+  max-width: 32rem;
+}
+input[type="text"], input[type="email"] {
+  width: 100%;
+  max-width: 32rem;
+}
+button {
+  background: #1E3A8A;
+  color: #F5F7FA;
+  padding: 0.6rem 1.2rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  background: #F2B33D;
+  color: #14202E;
+}
+ 
+/* 5 · phone — keep this last — Member 1 */
+@media (max-width: 700px) {
+  body {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+  }
+  nav {
+    position: static;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  aside {
+    border-left: 0;
+    border-top: 4px solid #1E3A8A;
+  }
+}
